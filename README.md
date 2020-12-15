@@ -1,6 +1,6 @@
 # My Calorie Pal V2
 
-## Group:
+## Team:
 
 David Martel [Github](https://github.com/davey4) | [LinkedIn](https://www.linkedin.com/in/david-martel-8117981b9/)
 
@@ -19,6 +19,8 @@ Get started by sigining up!
 - Keep track of daily calorie intake and compare against recommended calorie intake
 - Enter and track excercise and get back estimated burned calories
 
+---
+
 ### Tech Used
 
 - HTML / CSS / Javascript
@@ -28,18 +30,20 @@ Get started by sigining up!
 - Node
 - Redux
 
+---
+
 ### Version 1
 
 Deployed: [heroku](https://my-calorie-pal.herokuapp.com/)
 
-Github: [link](https://github.com/davey4/My-Calorie-Pal)
+## Github: [link](https://github.com/davey4/My-Calorie-Pal)
 
 ### Full Entity Realtionship Diagram
 
-![image of ERD]()
+## ![image of ERD]()
 
 ### Component Hierarchy Diagram
 
-![image of CHD]()
+## ![image of CHD]()
 
 ### Credits
