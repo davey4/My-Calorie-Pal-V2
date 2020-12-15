@@ -36,7 +36,7 @@ Get started by sigining up!
 
 Deployed: [heroku](https://my-calorie-pal.herokuapp.com/)
 
-## Github: [link](https://github.com/davey4/My-Calorie-Pal)
+Github: [link](https://github.com/davey4/My-Calorie-Pal)
 
 ### Full Entity Realtionship Diagram
 
