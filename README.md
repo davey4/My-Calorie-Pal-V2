@@ -6,6 +6,11 @@ David Martel [Github](https://github.com/davey4) | [LinkedIn](https://www.linked
 
 William Hunter Long [Github]() | [LinkedIn]()
 
+### Getting started
+
+Get started by sigining up!
+[My Calorie Pal V2]()
+
 ## Overview
 
 - Fitness Tracker :muscle:
@@ -22,11 +27,6 @@ William Hunter Long [Github]() | [LinkedIn]()
 - React
 - Node
 - Redux
-
-### Getting started
-
-Get started by sigining up!
-[My Calorie Pal V2]()
 
 ### Version 1
 
