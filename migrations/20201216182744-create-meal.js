@@ -1,7 +1,7 @@
 "use strict";
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    await queryInterface.createTable("exercises", {
+    await queryInterface.createTable("meals", {
       id: {
         allowNull: false,
         autoIncrement: true,
@@ -16,21 +16,20 @@ module.exports = {
           key: "id",
         },
       },
-      description: {
+      name: {
         type: Sequelize.STRING,
-        allowNull: false,
       },
-      cals_burned: {
-        type: Sequelize.STRING,
-        allowNull: false,
+      total_cals: {
+        type: Sequelize.INTEGER,
       },
-      activity_level: {
-        type: Sequelize.STRING,
-        allowNull: false,
+      total_protein: {
+        type: Sequelize.INTEGER,
       },
-      duration: {
-        type: Sequelize.STRING,
-        allowNull: false,
+      total_carbs: {
+        type: Sequelize.INTEGER,
+      },
+      total_fat: {
+        type: Sequelize.INTEGER,
       },
       createdAt: {
         allowNull: false,
@@ -45,6 +44,6 @@ module.exports = {
     });
   },
   down: async (queryInterface, Sequelize) => {
-    await queryInterface.dropTable("exercises");
+    await queryInterface.dropTable("meals");
   },
 };
