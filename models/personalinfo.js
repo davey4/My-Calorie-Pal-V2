@@ -1,7 +1,5 @@
-'use strict';
-const {
-  Model
-} = require('sequelize');
+"use strict";
+const { Model } = require("sequelize");
 module.exports = (sequelize, DataTypes) => {
   class PersonalInfo extends Model {
     /**
@@ -12,19 +10,51 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // define association here
     }
-  };
-  PersonalInfo.init({
-    user_id: DataTypes.INTEGER,
-    gender: DataTypes.STRING,
-    age: DataTypes.INTEGER,
-    height: DataTypes.INTEGER,
-    weight: DataTypes.INTEGER,
-    goal_weight: DataTypes.INTEGER,
-    weekly_goal: DataTypes.STRING,
-    rec_cal_intake: DataTypes.INTEGER
-  }, {
-    sequelize,
-    modelName: 'PersonalInfo',
-  });
+  }
+  PersonalInfo.init(
+    {
+      user_id: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        references: {
+          model: "user",
+          key: "id",
+        },
+      },
+      gender: {
+        type: DataTypes.STRING,
+        allowNull: false,
+      },
+      age: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+      },
+      height: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+      },
+      weight: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+      },
+      goal_weight: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+      },
+      weekly_goal: {
+        type: DataTypes.STRING,
+        allowNull: false,
+      },
+      rec_cal_intake: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+      },
+    },
+    {
+      sequelize,
+      modelName: "PersonalInfo",
+      tableName: "personal_infos",
+    }
+  );
   return PersonalInfo;
 };
