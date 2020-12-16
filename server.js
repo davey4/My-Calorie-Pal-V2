@@ -18,7 +18,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 // Initialize Middleware
 
-app.get("/", (req, res) => res.send({ msg: "Server Working" }));
+app.get("/", (req, res) => res.send({ msg: "My Cal Pal V2 database working" }));
 app.use("/api", AppRouter);
 
 app.listen(PORT, () => console.log(`Server Started On Port: ${PORT}`));
