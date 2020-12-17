@@ -7,8 +7,8 @@ const CreateProfile = async (req, res) => {
     await PersonalInfo.destroy({ where: { user_id: user_id } });
 
     const body = req.body;
-    let body = {
-      user_id: body.user_id,
+    let profileBody = {
+      user_id: user_id,
       gender: body.gender,
       age: body.age,
       height: body.height,
@@ -17,7 +17,8 @@ const CreateProfile = async (req, res) => {
       weekly_goal: body.weeklyGoal,
       rec_cal_intake: body.recCalIntake,
     };
-    const profile = PersonalInfo.create(body);
+    const profile = await PersonalInfo.create(profileBody);
+
     res.send(profile);
   } catch (error) {
     throw error;

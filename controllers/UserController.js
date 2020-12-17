@@ -3,12 +3,16 @@ const { hashPassword, passwordValid, createToken } = require("../middleware");
 
 const CreateUser = async (req, res) => {
   try {
-    const body = req.body;
+    const { lastName, firstName, email, password } = req.body;
+    let first_name = firstName;
+    let last_name = lastName;
+    // let password_digest = password;
+
     const password_digest = await hashPassword(password);
     const user = await User.create({
-      last_name: body.lastName,
-      first_name: body.firstName,
-      email: body.email,
+      last_name,
+      first_name,
+      email,
       password_digest,
     });
     res.send(user);
@@ -23,7 +27,10 @@ const LoginUser = async (req, res) => {
       where: { email: req.body.email },
       raw: true,
     });
-    if (user && (await passwordValid(req.body.password, user.password))) {
+    if (
+      user &&
+      (await passwordValid(req.body.password, user.password_digest))
+    ) {
       let payload = {
         id: user.id,
       };
@@ -50,12 +57,15 @@ const RefreshSession = async (req, res) => {
 const GetDiary = async (req, res) => {
   try {
     const diary = await User.findByPk(req.params.user_id, {
-      attributes: [],
+      attributes: ["id", "first_name"],
       include: [
         { model: PersonalInfo },
-        { model: Exercise },
         {
-          where: { createdAt: req.body.date },
+          // where: { createdAt: req.body.date },
+          model: Exercise,
+        },
+        {
+          // where: { createdAt: req.body.date },
           model: Meal,
           include: [{ model: Food }],
         },

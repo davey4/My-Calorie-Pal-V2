@@ -22,7 +22,8 @@ const CreateFood = async (req, res) => {
 
 const DeleteFood = async (req, res) => {
   try {
-    await Food.destroy({ where: { id: req.params.food_id } });
+    let id = parseInt(req.params.food_id);
+    await Food.destroy({ where: { id: id } });
     res.send({ msg: `deleted food id: ${id}` });
   } catch (error) {
     throw error;
