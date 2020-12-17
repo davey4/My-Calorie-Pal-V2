@@ -37,6 +37,29 @@ const LoginUser = async (req, res) => {
       let token = createToken(payload);
       return res.send({ user, token });
     }
+    res.send({ msg: "invalid" });
+  } catch (error) {
+    throw error;
+  }
+};
+
+const UpdateUser = async (req, res) => {
+  try {
+    let id = parseInt(req.params.user_id);
+    if (await passwordValid(req.body.originalPassword, user.password_digest)) {
+      const password_digest = await hashPassword(req.body.newPassword);
+      const user = User.update(
+        {
+          password_digest: password_digest,
+        },
+        {
+          where: { id: id },
+          returning: true,
+        }
+      );
+      return res.send(user);
+    }
+    res.send({ msg: "invalid" });
   } catch (error) {
     throw error;
   }
@@ -82,4 +105,5 @@ module.exports = {
   LoginUser,
   RefreshSession,
   GetDiary,
+  UpdateUser,
 };

@@ -18,6 +18,15 @@ export const __LoginUser = async (data) => {
   }
 };
 
+export const __UpdateUser = async (id, data) => {
+  try {
+    const res = await ApiClient.put(`/user/${id}`, data);
+    return res.data;
+  } catch (error) {
+    throw error;
+  }
+};
+
 export const __RefreshSession = async () => {
   try {
     const res = await ApiClient.get("/user/refresh/session");
