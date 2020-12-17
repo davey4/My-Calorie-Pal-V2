@@ -6,27 +6,16 @@ const CreateProfile = async (req, res) => {
 
     await PersonalInfo.destroy({ where: { user_id: user_id } });
 
-    const {
-      gender,
-      age,
-      height,
-      weight,
-      goalWeight,
-      weeklyGoal,
-      recCalIntake,
-    } = req.body;
-    let goal_weight = goalWeight;
-    let weekly_goal = weeklyGoal;
-    let rec_cal_intake = recCalIntake;
+    const body = req.body;
     let body = {
-      user_id,
-      gender,
-      age,
-      height,
-      weight,
-      goal_weight,
-      weekly_goal,
-      rec_cal_intake,
+      user_id: body.user_id,
+      gender: body.gender,
+      age: body.age,
+      height: body.height,
+      weight: body.weight,
+      goal_weight: body.goalWeight,
+      weekly_goal: body.weeklyGoal,
+      rec_cal_intake: body.recCalIntake,
     };
     const profile = PersonalInfo.create(body);
     res.send(profile);
