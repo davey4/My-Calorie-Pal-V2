@@ -27,7 +27,19 @@ const DeleteExercise = async (req, res) => {
   }
 };
 
+const GetExerciseByDate = async (req, res) => {
+  try {
+    const exercises = await Exercise.findAll({
+      where: { user_id: req.params.user_id, createdAt: req.body.date },
+    });
+    res.send(exercises);
+  } catch (error) {
+    throw error;
+  }
+};
+
 module.exports = {
   CreateExercise,
   DeleteExercise,
+  GetExerciseByDate,
 };
