@@ -3,6 +3,7 @@ import {
   SET_LASTNAME,
   SET_EMAIL,
   SET_PASSWORD,
+  CONFIRM_PASSWORD,
   REGISTER_USER,
   SIGNIN_USER,
 } from "../types";
@@ -26,6 +27,11 @@ export const setEmail = (data) => ({
 
 export const setPassword = (data) => ({
   type: SET_PASSWORD,
+  payload: data,
+});
+
+export const confirmPassord = (data) => ({
+  type: CONFIRM_PASSWORD,
   payload: data,
 });
 

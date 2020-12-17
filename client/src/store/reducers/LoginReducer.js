@@ -3,6 +3,7 @@ import {
   SET_FIRSTNAME,
   SET_EMAIL,
   SET_PASSWORD,
+  CONFIRM_PASSWORD,
   REGISTER_USER,
   SIGNIN_USER,
 } from "../types";
@@ -12,6 +13,7 @@ const iState = {
   firstName: "",
   email: "",
   password: "",
+  confirmPassord: "",
 };
 
 const LoginReducer = (state = iState, action) => {
@@ -24,6 +26,8 @@ const LoginReducer = (state = iState, action) => {
       return { ...state, email: action.payload };
     case SET_PASSWORD:
       return { ...state, password: action.payload };
+    case CONFIRM_PASSWORD:
+      return { ...state, confirmPassord: action.payload };
     case REGISTER_USER:
       return { ...state };
     case SIGNIN_USER:
