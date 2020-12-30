@@ -6,6 +6,7 @@ import {
   CONFIRM_PASSWORD,
   REGISTER_USER,
   SIGNIN_USER,
+  UPDATE_USER,
 } from "../types";
 
 const iState = {
@@ -16,7 +17,7 @@ const iState = {
   confirmPassord: "",
 };
 
-const LoginReducer = (state = iState, action) => {
+const UserReducer = (state = iState, action) => {
   switch (action.type) {
     case SET_LASTNAME:
       return { ...state, lastName: action.payload };
@@ -32,9 +33,11 @@ const LoginReducer = (state = iState, action) => {
       return { ...state };
     case SIGNIN_USER:
       return { ...state };
+    case UPDATE_USER:
+      return { ...state };
     default:
       return { ...state };
   }
 };
 
-export default LoginReducer;
+export default UserReducer;

@@ -9,7 +9,7 @@ import {
 
 const stateToProps = (state) => {
   return {
-    loginState: state.loginState,
+    loginState: state.userState,
   };
 };
 

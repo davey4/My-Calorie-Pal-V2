@@ -6,9 +6,14 @@ import {
   CONFIRM_PASSWORD,
   REGISTER_USER,
   SIGNIN_USER,
+  UPDATE_USER,
 } from "../types";
 
-import { __CreateUser, __LoginUser } from "../../services/UserServices";
+import {
+  __CreateUser,
+  __LoginUser,
+  __UpdateUser,
+} from "../../services/UserServices";
 
 export const setFirstName = (data) => ({
   type: SET_FIRSTNAME,
@@ -49,8 +54,20 @@ export const registerUser = (data) => async (dispatch) => {
 export const signInUser = (data) => async (dispatch) => {
   try {
     const res = await __LoginUser(data);
+    console.log(res);
     dispatch({
       type: SIGNIN_USER,
+    });
+  } catch (error) {
+    throw error;
+  }
+};
+
+export const updateUser = (id, data) => async (dispatch) => {
+  try {
+    await __UpdateUser(id, data);
+    dispatch({
+      type: UPDATE_USER,
     });
   } catch (error) {
     throw error;

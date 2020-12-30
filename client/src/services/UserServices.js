@@ -36,9 +36,9 @@ export const __RefreshSession = async () => {
   }
 };
 
-export const __GetDiary = async (id, data) => {
+export const __GetDiary = async (id) => {
   try {
-    const res = await ApiClient.get(`/user/${id}`, data);
+    const res = await ApiClient.get(`/user/${id}`);
     return res.data;
   } catch (error) {
     throw error;

@@ -1,10 +1,14 @@
 import { createStore, combineReducers, applyMiddleware } from "redux";
 import thunk from "redux-thunk";
-import LoginReducer from "./reducers/LoginReducer";
+import UserReducer from "./reducers/UserReducer";
+import DiaryReducer from "./reducers/DiaryReducer";
+import AuthReducer from "./reducers/AuthReducer";
 
 const store = createStore(
   combineReducers({
-    loginState: LoginReducer,
+    userState: UserReducer,
+    authState: AuthReducer,
+    diaryState: DiaryReducer,
   }),
   applyMiddleware(thunk)
 );

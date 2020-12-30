@@ -14,7 +14,7 @@ import { useEffect } from "react";
 
 const stateToProps = (state) => {
   return {
-    loginState: state.loginState,
+    loginState: state.userState,
   };
 };
 
