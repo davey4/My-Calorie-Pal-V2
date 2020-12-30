@@ -9,7 +9,7 @@ import {
   confirmPassord,
   registerUser,
   signInUser,
-} from "../store/actions/LoginActions";
+} from "../store/actions/UserActions";
 import { useEffect } from "react";
 
 const stateToProps = (state) => {

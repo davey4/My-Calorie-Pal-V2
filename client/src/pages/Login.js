@@ -5,7 +5,7 @@ import {
   setEmail,
   setPassword,
   signInUser,
-} from "../store/actions/LoginActions";
+} from "../store/actions/UserActions";
 
 const stateToProps = (state) => {
   return {
