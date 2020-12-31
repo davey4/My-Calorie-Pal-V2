@@ -37,3 +37,5 @@ export const SET_DESCRITPTION = "SET_DESCRIPTION";
 export const SET_CALS_BURNED = "SET_CALS_BURNED";
 export const SET_ACTIVITY_LEVEL = "SET_ACTIVITY_LEVEL";
 export const SET_DURATION = "SET_DURATION";
+
+// Food

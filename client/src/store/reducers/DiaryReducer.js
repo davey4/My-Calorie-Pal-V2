@@ -1,4 +1,4 @@
-import { GET_DIARY } from "../types";
+import { GET_DIARY, GET_EXERCISE_BY_DATE, GET_MEAL_BY_DATE } from "../types";
 
 const iState = {
   personalInfo: {},
@@ -15,6 +15,10 @@ const DiaryReducer = (state = iState, action) => {
         exercise: action.payload.Exercise,
         meals: action.payload.Meal,
       };
+    case GET_EXERCISE_BY_DATE:
+      return { ...state, exercise: action.payload };
+    case GET_MEAL_BY_DATE:
+      return { ...state, meals: action.payload };
     default:
       return { ...state };
   }
