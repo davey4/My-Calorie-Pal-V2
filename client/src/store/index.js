@@ -5,6 +5,7 @@ import AuthReducer from "./reducers/AuthReducer";
 import DiaryReducer from "./reducers/DiaryReducer";
 import MealReducer from "./reducers/MealReducer";
 import ExerciseReducer from "./reducers/ExerciseReducer";
+import FoodReducer from "./reducers/FoodReducer";
 
 const store = createStore(
   combineReducers({
@@ -13,6 +14,7 @@ const store = createStore(
     diaryState: DiaryReducer,
     mealState: MealReducer,
     exerciseState: ExerciseReducer,
+    foodState: FoodReducer,
   }),
   applyMiddleware(thunk)
 );

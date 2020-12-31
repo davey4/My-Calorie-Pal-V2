@@ -39,3 +39,12 @@ export const SET_ACTIVITY_LEVEL = "SET_ACTIVITY_LEVEL";
 export const SET_DURATION = "SET_DURATION";
 
 // Food
+export const CREATE_FOOD = "CREATE_FOOD";
+export const DELETE_FOOD = "DELETE_FOOD";
+export const SET_FOOD = "SET_FOOD";
+export const SET_SERVINGS = "SET_SERVINGS";
+export const SET_SERVING_SIZE = "SET_SERVING_SIZE";
+export const SET_CALORIES = "SET_CALORIES";
+export const SET_PROTEIN = "SET_PROTEIN";
+export const SET_CARBS = "SET_CARBS";
+export const SET_FAT = "SET_FAT";
