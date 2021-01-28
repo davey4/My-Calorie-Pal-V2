@@ -48,3 +48,5 @@ export const SET_CALORIES = "SET_CALORIES";
 export const SET_PROTEIN = "SET_PROTEIN";
 export const SET_CARBS = "SET_CARBS";
 export const SET_FAT = "SET_FAT";
+
+// Info
